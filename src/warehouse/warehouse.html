@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html ng-app='warehouse'>
+	<head>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.js"></script>
+		<script type="text/javascript" src="javascript/warehouse.js"></script>
+		<script type="text/javascript" src="javascript/warehouse.controller.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular-route.min.js"></script>
+	</head>
+	<body >
+		<div ng-controller='wHouseCtrl'>
+			<h2>Warehouse Inventory</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Material Number</th>
+						<th>Quantity</th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat='material in inventory'>
+						<td ng-bind='material.materialNumber'></td>
+						<td ng-bind='material.quantity'></td>
+						
+					</tr>
+				</tbody>
+			</table>
+			
+		</div>
+	</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "swagigee",
+  "version": "0.0.1",
+  "private": "true",
+  "description": "Swagger JSON parser outputting api proxy files for Apigee Edge",
+  "keywords": [],
+  "author": "Neil Munro",
+  "license": "",
+  "main": "app.js",
+  "dependencies": {
+    
+  },
+  "scripts": {
+    "start": "node app.js"
+  }
+}

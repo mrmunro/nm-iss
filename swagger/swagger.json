@@ -16,6 +16,7 @@
     "paths": {
         "/products": {
             "get": {
+                "x-apigee-flow-name": "get-products",
                 "summary": "Product Types",
                 "description": "The Products endpoint returns information about the *Uber* products\noffered at a given location. The response includes the display name\nand other details about each product, and lists the products in the\nproper display order.\n",
                 "parameters": [
@@ -60,6 +61,7 @@
         },
         "/estimates/price": {
             "get": {
+                "x-apigee-flow-name": "get-estimates-price",
                 "summary": "Price Estimates",
                 "description": "The Price Estimates endpoint returns an estimated price range\nfor each product offered at a given location. The price estimate is\nprovided as a formatted string with the full price range and the localized\ncurrency symbol.<br><br>The response also includes low and high estimates,\nand the [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) currency code for\nsituations requiring currency conversion. When surge is active for a particular\nproduct, its surge_multiplier will be greater than 1, but the price estimate\nalready factors in this multiplier.\n",
                 "parameters": [
@@ -120,6 +122,7 @@
         },
         "/estimates/time": {
             "get": {
+                "x-apigee-flow-name": "get-estimates-time",
                 "summary": "Time Estimates",
                 "description": "The Time Estimates endpoint returns ETAs for all products offered at a given location, with the responses expressed as integers in seconds. We recommend that this endpoint be called every minute to provide the most accurate, up-to-date ETAs.",
                 "parameters": [
@@ -177,6 +180,7 @@
         },
         "/me": {
             "get": {
+                "x-apigee-flow-name": "get-me",
                 "summary": "User Profile",
                 "description": "The User Profile endpoint returns information about the Uber user that has authorized with the application.",
                 "tags": [
@@ -200,6 +204,7 @@
         },
         "/history": {
             "get": {
+                "x-apigee-flow-name": "get-history",
                 "summary": "User Activity",
                 "description": "The User Activity endpoint returns data about a user's lifetime activity with Uber. The response will include pickup locations and times, dropoff locations and times, the distance of past requests, and information about which products were requested.<br><br>The history array in the response will have a maximum length based on the limit parameter. The response value count may exceed limit, therefore subsequent API requests may be necessary.",
                 "parameters": [

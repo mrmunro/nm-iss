@@ -13,6 +13,7 @@
     "produces": [
         "application/json"
     ],
+    "xapigeeproxypath": "/v1/yoyo",
     "paths": {
         "/products": {
             "get": {

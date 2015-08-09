@@ -29,11 +29,11 @@ fs.readFile('./swagger/swagger.json', function(err,data) {
   
   var pathXml;
   
-  var proxy = [ { ProxyEndpoint:[{_attr:{name:json.info['title']}}, {Description:json.info.description},{PreFlow : [{_attr:{name:'PreFlow'}}]}]}];
+  var proxy = [ { ProxyEndpoint:[{_attr:{name:json.info['title']}}, {Description:json.info.description},{PreFlow : [{_attr:{name:'PreFlow'}},{Request:''},{Response:''}]}]}];
   
   for(path in json.paths) {
     
-    proxy[0]["ProxyEndpoint"].push({Flow:[{_attr:{name:json.paths[path]["get"]["x-apigee-flow-name"]}}]});
+    proxy[0]["ProxyEndpoint"].push({Flow:[{_attr:{name:json.paths[path]["get"]["x-apigee-flow-name"]}},{Request:''},{Response:''},{Condition:''}]});
     
     pathXml += xml([{Flow:[{_attr:{name:json.paths[path]["get"]["x-apigee-flow-name"]}}]}]);
     var method = json.paths[path];
@@ -42,7 +42,7 @@ fs.readFile('./swagger/swagger.json', function(err,data) {
     //console.log(method["get"]['x-apigee-flow-name']);
   }
   
-  var postflow = {PostFlow : [{_attr:{name:'PostFlow'}}]};
+  var postflow = {PostFlow : [{_attr:{name:'PostFlow'}},{Request:''},{Response:''}]};
   proxy[0]["ProxyEndpoint"].push(postflow);
   
   var proxyConnection = {HTTPProxyConnection: [{BasePath: json.basePath}]};

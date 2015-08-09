@@ -29,7 +29,7 @@ fs.readFile('./swagger/swagger.json', function(err,data) {
   
   var pathXml;
   
-  var proxy = [ { ProxyEndpoint:[ {Description:json.info.description},{PreFlow : [{_attr:{name:'PreFlow'}}]}]}];
+  var proxy = [ { ProxyEndpoint:[{_attr:{name:json.info['title']}}, {Description:json.info.description},{PreFlow : [{_attr:{name:'PreFlow'}}]}]}];
   
   for(path in json.paths) {
     
